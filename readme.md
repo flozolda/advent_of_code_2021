@@ -2,6 +2,6 @@
 
 Language used: Ruby
 
-\# of solved puzzles: 5
+\# of solved puzzles: 7
 
 Unsolved puzzles: 
