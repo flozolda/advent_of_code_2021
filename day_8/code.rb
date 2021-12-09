@@ -50,27 +50,28 @@ input_values.each_with_index do |words,index|
       elsif w.length == 7
         solver[8] ||= w
       elsif w.length == 6
-        next if solver[4].nil? || solver[7].nil?
-        solver[9] ||= w if (w.chars - (solver[4].chars + solver[7].chars).uniq).length == 1
-        next if solver[9].nil?
-
-        if (w.chars - solver[9].chars).length == 1
+        next if solver[4].nil? || solver[1].nil?
+        if !solver[6].nil? && !solver[9].nil?
+          solver[0] = w if w != solver[6] && w != solver[9]
+        end
+        if (w.chars & (solver[4].chars-solver[1].chars)).length == 2
           solver[6] ||= w
-        else
+          next
+        end
+
+        if ((w.chars & solver[4].chars) & solver[1].chars).length == 2
           solver[9] ||= w
         end
-        next if solver[6].nil?
 
-        solver[0] ||= w if w != solver[9] && w != solver[6]
+
       elsif w.length == 5
-        next if solver[6].nil?
+        next if solver[4].nil? || solver[1].nil?
         solver[5] = w if (w.chars & (solver[4].chars-solver[1].chars)).length  == 2
         solver[3] = w if (w.chars & solver[1].chars).length == 2
 
         if !solver[3].nil? && !solver[5].nil?
           solver[2] = w if w != solver[5] && w != solver[3]
         end
-        #solver[2] ||= w if ((solver[6].chars - (solver[8].chars-solver[9].chars)).uniq & w.chars).length == 5
         
       end
     end

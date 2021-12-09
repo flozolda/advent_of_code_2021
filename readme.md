@@ -2,6 +2,8 @@
 
 Language used: Ruby
 
-\# of solved puzzles: 8
+New Constraint: Only 30 minutes allowed per day (because I have way too much on my plate), next year better.
 
-Unsolved puzzles: 8.2 (Testinput works, ???)
+\# of solved puzzles: 7.5
+
+Unsolved puzzles: 8.2 (Testinput works, ???),9,
