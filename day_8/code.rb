@@ -55,12 +55,12 @@ input_values.each_with_index do |words,index|
           solver[0] = w if w != solver[6] && w != solver[9]
         end
         if (w.chars & (solver[4].chars-solver[1].chars)).length == 2
-          solver[6] ||= w
+          solver[9] ||= w
           next
         end
 
         if ((w.chars & solver[4].chars) & solver[1].chars).length == 2
-          solver[9] ||= w
+          solver[6] ||= w
         end
 
 
